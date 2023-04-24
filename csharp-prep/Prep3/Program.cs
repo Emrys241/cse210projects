@@ -26,7 +26,7 @@ class Program
         Random random = new Random();
         int secretNumber = random.Next(1, 101);
 
-        Console.WriteLine("Guess a number between 1 and 100:");
+        Console.WriteLine("Guess a number between 1 and 101:");
         int guess = 0;
         int numGuesses = 0;
 
