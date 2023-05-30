@@ -11,7 +11,7 @@ class Program
         Console.WriteLine(summary);
 
           // Now create the derived class assignments
-        MathAssignment mathAssignment = new MathAssignment("Bernard Amegah", "Fractions", "7.3", "8-19");
+        MathAssignment mathAssignment = new MathAssignment("James Mattis", "Fractions", "7.3", "8-19");
         Console.WriteLine(mathAssignment.GetSummary());
         Console.WriteLine(mathAssignment.GetHomeworkList());
 
