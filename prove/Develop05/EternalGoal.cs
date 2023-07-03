@@ -12,6 +12,6 @@ public class EternalGoal : Goal
 
     public override string GetStatus()
     {
-        return IsCompleted ? "[X]" : "[ ]";
+        return IsCompleted ? "[ ]" : "[ ]";
     }
 }
