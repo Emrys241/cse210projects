@@ -1,14 +1,16 @@
-namespace Develop05
+public class SimpleGoal : Goal
 {
-    public class SimpleGoal : Goal
+    public SimpleGoal(string name, string description, int points) : base(name, description, points)
     {
-        public SimpleGoal(string description, int value) : base(description, value)
-        {
-        }
+    }
 
-        public override string GetStatus()
-        {
-            return IsComplete ? "Complete" : "Incomplete";
-        }
+    public override void CompleteGoal()
+    {
+        IsCompleted = true;
+    }
+
+    public override string GetStatus()
+    {
+        return IsCompleted ? "[X]" : "[ ]";
     }
 }

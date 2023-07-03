@@ -1,24 +1,11 @@
-using System;
-
-namespace Develop05
+public class ScoreManager
 {
-    public static class ScoreManager
+    private int _totalPoints;
+
+    public int TotalPoints => _totalPoints;
+
+    public void AddPoints(int points)
     {
-        private static int score;
-
-        public static void IncreaseScore(int value)
-        {
-            score += value;
-        }
-
-        public static void DecreaseScore(int value)
-        {
-            score -= value;
-        }
-
-        public static void DisplayScore()
-        {
-            Console.WriteLine($"Score: {score}");
-        }
+        _totalPoints += points;
     }
 }

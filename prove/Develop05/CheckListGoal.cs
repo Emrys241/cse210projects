@@ -1,31 +1,28 @@
-namespace Develop05
+public class ChecklistGoal : Goal
 {
-    public class ChecklistGoal : Goal
+    public int TimesCompleted { get; set; }
+    public int RequiredTimes { get; private set; }
+    public int BonusPoints { get; private set; }
+
+    public ChecklistGoal(string name, string description, int points, int bonusPoints, int requiredTimes)
+        : base(name, description, points)
     {
-        public int CompletionCount { get; }
-        public int TargetCount { get; }
+        TimesCompleted = 0;
+        RequiredTimes = requiredTimes;
+        BonusPoints = bonusPoints;
+    }
 
-        public ChecklistGoal(string description, int value, int completionCount, int targetCount, bool completed = false) : base(description, value)
+    public override void CompleteGoal()
+    {
+        TimesCompleted++;
+        if (TimesCompleted >= RequiredTimes)
         {
-            CompletionCount = completionCount;
-            TargetCount = targetCount;
-            IsComplete = completed;
+            IsCompleted = true;
         }
+    }
 
-        public override string GetStatus()
-        {
-            if (IsComplete)
-            {
-                return "Complete";
-            }
-            else if (CompletionCount < TargetCount)
-            {
-                return "Incomplete";
-            }
-            else
-            {
-                return "In Progress";
-            }
-        }
+    public override string GetStatus()
+    {
+        return IsCompleted ? "[X]" : "[ ]";
     }
 }

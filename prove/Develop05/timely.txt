@@ -1,0 +1,3 @@
+SimpleGoal:Travel,travel to the north tuesday 8 am,50,False
+EternalGoal:prayer,church invastion on sunday morning,200
+ChecklistGoal:fighting,for family land,220,100,1,0

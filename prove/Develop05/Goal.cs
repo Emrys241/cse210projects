@@ -1,25 +1,18 @@
-using System;
-
-namespace Develop05
+public abstract class Goal
 {
-    public abstract class Goal
+    public string Name { get; }
+    public string Description { get; }
+    public int Points { get; }
+    public bool IsCompleted { get; set; }
+
+    protected Goal(string name, string description, int points)
     {
-        public string Description { get; }
-        public int Value { get; }
-        public bool IsComplete { get; set; }
-
-        public Goal(string description, int value)
-        {
-            Description = description;
-            Value = value;
-            IsComplete = false;
-        }
-
-        public abstract string GetStatus();
-
-        public virtual void RecordEvent(string eventDetails)
-        {
-            Console.WriteLine("Event recorded for the goal: " + eventDetails);
-        }
+        Name = name;
+        Description = description;
+        Points = points;
+        IsCompleted = false;
     }
+
+    public abstract void CompleteGoal();
+    public abstract string GetStatus();
 }
